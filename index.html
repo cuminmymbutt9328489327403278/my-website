@@ -1,30 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>rifle smells like ass</title>
-  <style>
-    body {
-      background-color: black;
-      color: red;
-      font-family: "Courier New", monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    h1 {
-      font-size: 3em;
-    }
-    p {
-      font-size: 1.5em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fright.sh</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Pixelated Font -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'VT323', monospace;
+            background-color: #000;
+            cursor: none;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity for better text readability */
+            z-index: -1;
+        }
+
+        #snowCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -2;
+        }
+
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            transform: scale(0);
+            animation: star-fade 1s forwards;
+            filter: drop-shadow(0 0 5px #fff);
+        }
+
+        @keyframes star-fade {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+        
+        .sparkle-container {
+            position: relative;
+            display: inline-block;
+        }
+        .sparkle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle-pop 0.1s forwards;
+            filter: drop-shadow(0 0 3px #fff);
+            pointer-events: none;
+        }
+        @keyframes sparkle-pop {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+    </style>
 </head>
-<body>
-  <h1>rife smells like fucking shit </h1>
-  <p> #mdoxbin lifestyle </p>
+<body class="bg-black text-white antialiased">
+
+    <!-- Landing Page (Click to Enter) -->
+    <div id="landing-page" class="flex items-center justify-center h-screen transition-opacity duration-1000 ease-in-out">
+        <h1 id="enter-button" class="text-4xl md:text-6xl cursor-pointer hover:text-gray-400 transition-colors">
+            Click to enter
+        </h1>
+    </div>
+
+    <!-- Main Content Page -->
+    <div id="main-content" class="hidden flex flex-col items-center justify-center h-screen transition-opacity duration-1000 ease-in-out opacity-0">
+        <canvas id="snowCanvas"></canvas>
+        
+        <!-- Audio controls -->
+        <div class="absolute top-4 left-4 flex items-center space-x-2 text-white">
+            <button id="playPauseButton" class="bg-gray-800 p-2 rounded-full hover:bg-gray-700 transition-colors">
+                <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.121L20.6 15l-5.848 3.879M4.2 15L10.048 11.121l-5.848-3.879" />
+                </svg>
+                <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 9v6m4-6v6" />
+                </svg>
+            </button>
+        </div>
+        <audio id="backgroundAudio" loop>
+            <source src="song.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-10">
+            <!-- Profile 1: wise -->
+            <div class="flex flex-col items-center group">
+                <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <!-- Updated image for wise -->
+                    <img src="https://i.pinimg.com/1200x/2f/82/9f/2f829fe7252c3fee20f175378593e6e8.jpg" alt="wise's avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="sparkle-container">
+                    <p class="mt-4 text-xl md:text-2xl tracking-wider">wise</p>
+                </div>
+            </div>
+
+            <!-- Profile 2: juvinal -->
+            <div class="flex flex-col items-center group">
+                <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://i.pinimg.com/736x/03/51/f0/0351f03eccfa586523a2ee998bf346ce.jpg" alt="juvinal's avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="sparkle-container">
+                    <p class="mt-4 text-xl md:text-2xl tracking-wider">juvinal</p>
+                </div>
+            </div>
+
+            <!-- Profile 3: mishka -->
+            <div class="flex flex-col items-center group">
+                <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://i.pinimg.com/736x/6e/4d/34/6e4d344c29a83bae315516f94a9de70b.jpg" alt="theory's avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="sparkle-container">
+                    <p class="mt-4 text-xl md:text-2xl tracking-wider">theory</p>
+                </div>
+            </div>
+
+            <!-- Profile 4: Chelsea -->
+            <div class="flex flex-col items-center group">
+                <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <!-- Corrected image URL for Chelsea -->
+                    <img src="https://i.pinimg.com/736x/7f/73/70/7f7370e8d7880df96d2ee82a38f7a980.jpg" alt="Chelsea's avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="sparkle-container">
+                    <p class="mt-4 text-xl md:text-2xl tracking-wider">USER</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://t.me/frightsh" target="_blank" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-gray-500 hover:text-white transition-colors duration-200">fright.sh</a>
+    </div>
+
+    <script>
+        // --- Page Transitions ---
+        const landing = document.getElementById('landing-page');
+        const main = document.getElementById('main-content');
+        const audio = document.getElementById('backgroundAudio');
+        const playPauseButton = document.getElementById('playPauseButton');
+        const playIcon = document.getElementById('playIcon');
+        const pauseIcon = document.getElementById('pauseIcon');
+
+        document.getElementById('enter-button').addEventListener('click', () => {
+            landing.style.opacity = '0';
+            setTimeout(() => {
+                landing.classList.add('hidden');
+                main.classList.remove('hidden');
+                setTimeout(() => { 
+                    main.style.opacity = '1'; 
+                    // Set the background image and its properties after entering
+                    document.body.style.backgroundImage = 'url("https://cdn.discordapp.com/attachments/1401680038893453423/1403188286926885036/icon.jpg?ex=6896a46d&is=689552ed&hm=9e84bfc0609f7d44c1546611538506a377cbca6d750b1b9cf7fec590da7dbfa0&")';
+                    document.body.style.backgroundSize = '38%';
+                    document.body.style.backgroundPosition = 'right 0%';
+                    audio.play().catch(error => {
+                        console.log('Autoplay failed:', error);
+                    });
+                }, 50);
+            }, 1000);
+        });
+
+        // Toggle play/pause
+        playPauseButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            } else {
+                audio.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            }
+        });
+
+        // --- Star Cursor Effect ---
+        document.addEventListener('mousemove', (e) => {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${e.clientX}px`;
+            star.style.top = `${e.clientY}px`;
+            document.body.appendChild(star);
+            setTimeout(() => star.remove(), 1000);
+        });
+
+        // --- Snowfall Effect ---
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+        const snowflakes = [];
+        const numFlakes = 50;
+
+        const resizeCanvas = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        function Flake() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speed = Math.random() * 0.5 + 0.2;
+            this.alpha = Math.random() * 0.8 + 0.2;
+        }
+
+        for (let i = 0; i < numFlakes; i++) {
+            snowflakes.push(new Flake());
+        }
+
+        const animateSnow = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let flake of snowflakes) {
+                flake.y += flake.speed;
+                if (flake.y > canvas.height) {
+                    flake.y = -flake.size;
+                    flake.x = Math.random() * canvas.width;
+                }
+                ctx.beginPath();
+                ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${flake.alpha})`;
+                ctx.fill();
+            }
+            requestAnimationFrame(animateSnow);
+        };
+
+        // --- Sparkling Name Effect ---
+        document.querySelectorAll('.sparkle-container p').forEach(nameElement => {
+            setInterval(() => {
+                const sparkleCount = Math.floor(Math.random() * 3) + 1;
+                const elementRect = nameElement.getBoundingClientRect();
+                const parentRect = nameElement.parentElement.getBoundingClientRect();
+
+                for (let i = 0; i < sparkleCount; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.classList.add('sparkle');
+                    const xOffset = Math.random() * (elementRect.width + 10) - 5;
+                    const yOffset = Math.random() * (elementRect.height + 5) - 2.5;
+                    sparkle.style.left = `${elementRect.left - parentRect.left + xOffset}px`;
+                    sparkle.style.top = `${elementRect.top - parentRect.top + yOffset}px`;
+                    nameElement.parentElement.appendChild(sparkle);
+                    setTimeout(() => sparkle.remove(), 100);
+                }
+            }, Math.random() * 500 + 300);
+        });
+
+        window.onload = animateSnow;
+    </script>
+
+<script>
+// Disable Right-Click
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Disable common DevTools shortcuts
+document.addEventListener('keydown', e => {
+  if (
+    e.key === 'F12' ||
+    (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key)) ||
+    (e.ctrlKey && e.key === 'U')
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+
 </body>
 </html>

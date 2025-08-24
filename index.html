@@ -1,178 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>fright.sh</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/disable-devtool@0.3.9/disable-devtool.min.js"></script>
-<script>
-    DisableDevtool({
-        ondevtoolopen: function(type) {
-            window.location.href = 'https://www.pornhub.com/view_video.php?viewkey=664222b4e1f52';
-        }
-    });
-</script>
+  <meta charset="UTF-8">
+  <title>Rainbow Text</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
 
-    <meta charset="UTF-8">
-    <title>whatever</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            font-family: 'Roboto', sans-serif;
-            background: #000;
-            overflow: hidden;
-        }
+    .rainbow-text span {
+      font-size: 3em;
+      font-weight: bold;
+      padding: 0 0.2em;
+    }
 
-        #start {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: #000;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.75rem;
-            font-weight: 200;
-            cursor: pointer;
-            user-select: none;
-            z-index: 10;
-            transition: opacity 0.3s;
-        }
-
-        #app {
-            opacity: 0;
-            transition: opacity 0.3s;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        #app.visible {
-            opacity: 1;
-        }
-
-        .list {
-            display: flex;
-            gap: 20px;
-        }
-
-        .profile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #fff;
-            font-weight: 200;
-        }
-
-        .profile img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 5px;
-        }
-
-        .profile p {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-
-        .gif {
-            position: absolute;
-            right: -120px;
-            bottom: -5px;
-        }
-
-        .gif img {
-            height: 65vh;
-        }
-    </style>
+    .rainbow-text .word1 { color: red; }
+    .rainbow-text .word2 { color: orange; }
+    .rainbow-text .word3 { color: yellow; }
+    .rainbow-text .word4 { color: green; }
+    .rainbow-text .word5 { color: blue; }
+    .rainbow-text .word6 { color: indigo; }
+  </style>
 </head>
 <body>
-
-<div id="start">Click To Enter</div>
-
-<div id="app">
-    <div class="list">
-        <div class="profile">
-            <img src="https://i.pinimg.com/736x/27/b7/e4/27b7e4727c281e2b618a46dfc89138a5.jpg">
-            <p>juvinal</p>
-        </div>
-        <div class="profile">
-            <img src="https://i.pinimg.com/736x/ae/b0/2c/aeb02c2ec411e2d6ec5b3e381295a26c.jpg">
-            <p>wise</p>
-        </div>
-        <div class="profile">
-            <img src="https://i.pinimg.com/736x/5a/48/f1/5a48f1d10a7e52dfac488c1cd194deec.jpg">
-            <p>kaid</p>
-        </div>
-        <div class="profile">
-            <img src="https://i.pinimg.com/736x/6d/42/c8/6d42c89c9494c7cd3ade9a43e1cccce5.jpg">
-            <p>auth</p>
-        </div>
-        <div class="profile">
-            <img src="https://i.pinimg.com/736x/9d/16/4e/9d164e4e074d11ce4de0a508914537a8.jpg">
-            <p>name</p>
-        </div>
-    </div>
-
-    <div class="gif">
-        <img src="gif.gif">
-    </div>
-</div>
-
-<audio id="audio" src="audio.mp3" preload="auto"></audio>
-
-<script>
-    const start = document.getElementById('start');
-    const app = document.getElementById('app');
-    const audio = document.getElementById('audio');
-
-    start.addEventListener('click', () => {
-        audio.play().catch(e => console.log(e));
-        start.style.opacity = '0';
-        setTimeout(() => {
-            start.style.display = 'none';
-            app.classList.add('visible');
-        }, 300);
-    });
-</script>
-
-
-<script>
-    // Disable right-click
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // Block common inspect element keys
-    document.addEventListener('keydown', function(e) {
-        if (
-            e.key === "F12" || // F12
-            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) || // Ctrl+Shift+I/J/C
-            (e.ctrlKey && e.key === "U") // Ctrl+U
-        ) {
-            e.preventDefault();
-            return false;
-        }
-    });
-
-
-    DisableDevtool({
-        ondevtoolopen: function(type) {
-            window.location.href = 'https://www.pornhub.com/view_video.php?viewkey=664222b4e1f52';
-        }
-    });
-</script>
-
+  <div class="rainbow-text">
+    <span class="word1">despise</span>
+    <span class="word2">is</span>
+    <span class="word3">a</span>
+    <span class="word4">fat</span>
+    <span class="word5">piggy</span>
+  </div>
 </body>
 </html>
-
-
-
-

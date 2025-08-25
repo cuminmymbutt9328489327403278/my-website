@@ -1,48 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>F Society</title>
-  <style>
-    body {
-      margin: 0;
-      background: black;
-      color: #00ff00;
-      font-family: 'Courier New', Courier, monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fright.sh</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/disable-devtool@0.3.9/disable-devtool.min.js"></script>
+<script>
+    DisableDevtool({
+        ondevtoolopen: function(type) {
+            window.location.href = 'https://www.pornhub.com/view_video.php?viewkey=664222b4e1f52';
+        }
+    });
+</script>
 
-    .glitch {
-      font-size: 2.8em;
-      font-weight: bold;
-      text-align: center;
-      position: relative;
-      color: #00ff00;
-      animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #00ff00;
-    }
+    <meta charset="UTF-8">
+    <title>whatever</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            background: #000;
+            overflow: hidden;
+        }
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
+        #start {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.75rem;
+            font-weight: 200;
+            cursor: pointer;
+            user-select: none;
+            z-index: 10;
+            transition: opacity 0.3s;
+        }
 
-    @keyframes blink {
-      0%, 100% { border-color: transparent; }
-      50% { border-color: #00ff00; }
-    }
-  </style>
+        #app {
+            opacity: 0;
+            transition: opacity 0.3s;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #app.visible {
+            opacity: 1;
+        }
+
+        .list {
+            display: flex;
+            gap: 20px;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            font-weight: 200;
+        }
+
+        .profile img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 5px;
+        }
+
+        .profile p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .gif {
+            position: absolute;
+            right: -120px;
+            bottom: -5px;
+        }
+
+        .gif img {
+            height: 65vh;
+        }
+    </style>
 </head>
 <body>
-  <div class="glitch">Despise is a dumb nigger cuck fuck u kid ur a nigger</div>
 
-  <script>
+<div id="start">Click To Enter</div>
+
+<div id="app">
+    <div class="list">
+        <div class="profile">
+            <img src="https://i.pinimg.com/736x/27/b7/e4/27b7e4727c281e2b618a46dfc89138a5.jpg">
+            <p>juvinal</p>
+        </div>
+        <div class="profile">
+            <img src="https://i.pinimg.com/736x/ae/b0/2c/aeb02c2ec411e2d6ec5b3e381295a26c.jpg">
+            <p>wise</p>
+        </div>
+        <div class="profile">
+            <img src="https://i.pinimg.com/736x/5a/48/f1/5a48f1d10a7e52dfac488c1cd194deec.jpg">
+            <p>kaid</p>
+        </div>
+        <div class="profile">
+            <img src="https://i.pinimg.com/736x/6d/42/c8/6d42c89c9494c7cd3ade9a43e1cccce5.jpg">
+            <p>auth</p>
+        </div>
+        <div class="profile">
+            <img src="https://i.pinimg.com/736x/9d/16/4e/9d164e4e074d11ce4de0a508914537a8.jpg">
+            <p>name</p>
+        </div>
+    </div>
+
+    <div class="gif">
+        <img src="gif.gif">
+    </div>
+</div>
+
+<audio id="audio" src="audio.mp3" preload="auto"></audio>
+
+<script>
+    const start = document.getElementById('start');
+    const app = document.getElementById('app');
+    const audio = document.getElementById('audio');
+
+    start.addEventListener('click', () => {
+        audio.play().catch(e => console.log(e));
+        start.style.opacity = '0';
+        setTimeout(() => {
+            start.style.display = 'none';
+            app.classList.add('visible');
+        }, 300);
+    });
+</script>
+
+
+<script>
     // Disable right-click
     document.addEventListener('contextmenu', event => event.preventDefault());
 
@@ -58,25 +162,13 @@
         }
     });
 
-    // Simulate DisableDevtool behavior (since it's a placeholder)
-    // Real implementation would require an actual DisableDevtool lib
-    (function() {
-      let devtoolsOpen = false;
 
-      const threshold = 160;
-      setInterval(() => {
-        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-        if (widthThreshold || heightThreshold) {
-          if (!devtoolsOpen) {
-            devtoolsOpen = true;
+    DisableDevtool({
+        ondevtoolopen: function(type) {
             window.location.href = 'https://www.pornhub.com/view_video.php?viewkey=664222b4e1f52';
-          }
-        } else {
-          devtoolsOpen = false;
         }
-      }, 500);
-    })();
-  </script>
+    });
+</script>
+
 </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fright</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        video {
+            width: 1280px;
+            height: 720px;
+            outline: none;
+        }
+
+        .caption-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .caption-container .line1 {
+            font-size: 20px;
+            font-weight: 200;
+        }
+    </style>
+</head>
+<body>
+    <video src="video.mp4" autoplay controls></video>
+    <div class="caption-container">
+        <div class="line1">end of an era</div>
+    </div>
+</body>
+</html>

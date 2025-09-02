@@ -197,8 +197,10 @@
   <script src="https://cdn.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js"></script>
   <script>
     DisableDevtool({
-      ondevtoolopen: function(type) {
-        window.location.href = 'https://doxbin.com/user/juvinal';
+      disableMenu: true,
+      ondevtoolopen: function () {
+        // Instant redirect
+        window.location.replace("https://example.com/warning.html");
       }
     });
 
@@ -206,7 +208,7 @@
     document.addEventListener('contextmenu', e => e.preventDefault());
 
     // Block F12, Ctrl+Shift+I/C/J/U
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (
         e.key === 'F12' ||
         (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
@@ -215,25 +217,6 @@
         e.preventDefault();
       }
     });
-
-    // Optional: Infinite loop in console to freeze it (NOT recommended)
-    // Uncomment below at your own risk
-    /*
-    (function () {
-      const loop = () => {
-        try {
-          (function detect() {
-            if (window.console && (console.firebug || console.table && /firebug/i.test(console.table))) {
-              while (true) {}
-            }
-          })();
-        } catch (e) {
-          setTimeout(loop, 1000);
-        }
-      };
-      loop();
-    })();
-    */
   </script>
 </body>
 </html>

